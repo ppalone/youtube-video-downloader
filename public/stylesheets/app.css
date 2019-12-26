@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier Prime', monospace;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container > h1 {
+    text-align: center;
+}
+
+#header {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+}
+
+#yt-url {
+    width: 100%;
+    height: 40px;
+}
+
+#dl-btn {
+    height: 40px;
+    margin: 10px 0;
+}

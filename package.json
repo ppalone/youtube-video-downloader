@@ -1,0 +1,19 @@
+{
+  "name": "youtube-downloader",
+  "version": "1.0.0",
+  "description": "Youtube video downloader",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Pranjal Alone",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0",
+    "ytdl-core": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

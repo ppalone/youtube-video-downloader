@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yt Video Downloader</title>
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Youtube Video Downloader</h1>
+        <div id="header">
+            <input type="text" id="yt-url" placeholder="Enter Youtube Video/Playlist URL" required>
+            <button id="dl-btn">Download</button><br>
+            <span id="message">Enter any Youtube Video/Playlist URL</span>
+        </div>
+        <div id="content">
+            <!-- What is the type? Video or a Playlist? -->
+            <span id='type'></span>
+            <div id="yt-videos">
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>

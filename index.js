@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const ytdl = require('ytdl-core');
-const request = require('request');
+// const request = require('request');
+const ytlist = require('youtube-playlist');
 
 app.use(express.static('views'));
 app.use(express.static('public'));
@@ -13,29 +14,29 @@ app.get('/', (req, res) => {
 
 app.get('/download', (req, res) => {
     let reqURL = req.query.URL;
-    console.log(reqURL);
-    // ytdl.getBasicInfo(reqURL, (err, info) => {
-    //     if (err) throw err;
-    //     console.log(info);
-    //     res.status(200).json(info);           
-    // });
-    // console.log(info);
-    // ytdl.getBasicInfo(reqURL, (err, info) => {
-    //     if (err) throw err;
-    //     let dlURL = info["player_response"]["streamingData"]["formats"][0]["url"];
-    //     let dlFile = fs.createWriteStream("test.mp4");
-    //     request(dlURL, (err, response, body) => {
-    //         if (err) throw err;
-    //         dlFile.pipe(response);
-    //     });
-    //     res.download(dlFile);
-    // });
-    res.set('Content-disposition', "attachment; filename=video.mp4");
-    // res.set('Content-Type', 'text/plain');
-    ytdl(reqURL, { filter : (format) => format.container === "mp4" }).pipe(res);
+    /* 
+    If the url is of a video fetch the details of the video 
+    else 
+    If the url is of a playlist get all the videos from the playlist and fetch each video's detail
+    */
+    if (reqURL.indexOf('watch') === -1) {
+        // This means its a playlist
+        ytlist(reqURL)
+            .then(response => res.json(response.data.playlist))
+            .catch(err => console.log(err));
+    } else {
+        // This means its a video link
+        // To be added
+    }
+    // console.log(reqURL);
+    // res.set('Content-disposition', "attachment; filename=video.mp4");
+    // ytdl(reqURL, { filter : (format) => format.container === "mp4" }).pipe(res);
 });
 
-// app.get('/download/video', (req, res) => {
-// });
+app.get('/download/video',(req, res) => {
+    let dlURL = req.query.URL;
+    res.set('Content-disposition', "attachment; filename=video.mp4");
+    ytdl(dlURL, { filter : (format) => format.container === "mp4" }).pipe(res);
+});
 
 app.listen(8000, () => console.log("Server Started")); 

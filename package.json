@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "request": "^2.88.0",
+    "youtube-playlist": "^1.0.2",
     "ytdl-core": "^1.0.5"
   },
   "devDependencies": {

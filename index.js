@@ -25,8 +25,9 @@ app.get('/download', (req, res) => {
             .then(response => res.json(response.data.playlist))
             .catch(err => console.log(err));
     } else {
-        // This means its a video link
-        // To be added
+        res.status(400).send({
+            message: "Something went wrong"
+        });
     }
     // console.log(reqURL);
     // res.set('Content-disposition', "attachment; filename=video.mp4");
@@ -39,4 +40,4 @@ app.get('/download/video',(req, res) => {
     ytdl(dlURL, { filter : (format) => format.container === "mp4" }).pipe(res);
 });
 
-app.listen(8000, () => console.log("Server Started")); 
+app.listen(8000, () => console.log("Server Started"));

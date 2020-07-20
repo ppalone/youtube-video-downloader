@@ -4,16 +4,20 @@
   "description": "Youtube video downloader",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js"
+  },
+  "engines": {
+    "node": ""
   },
   "author": "Pranjal Alone",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "youtube-playlist": "^1.0.2",
-    "ytdl-core": "^1.0.5"
+    "youtube-playlist": "^1.0.4",
+    "ytdl-core": "^3.2.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }

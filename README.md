@@ -11,7 +11,7 @@ Clone the Repository and Run
 npm i
 ```
 
-OF 
+OR
 
 ```
 npm ci

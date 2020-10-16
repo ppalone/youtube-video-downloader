@@ -1,10 +1,20 @@
-# Youtube Video Downloader
-A Nodejs app to download youtube videos.
+# 📺 Youtube Video Downloader
+This Nodejs app allows you to download youtube videos.
+
+## Prerequisites
+You will need `node.js` [see here](https://nodejs.org)
 
 ## Installation
 Clone the Repository and Run 
+
 ```
-npm install
+npm i
+```
+
+OF 
+
+```
+npm ci
 ```
 
 This will install all the dependencies

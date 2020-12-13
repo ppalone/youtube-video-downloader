@@ -14,9 +14,9 @@ app.get('/', (req, res) => {
 
 app.get('/download', (req, res) => {
     let reqURL = req.query.URL;
-    /* 
-    If the url is of a video fetch the details of the video 
-    else 
+    /*
+    If the url is of a video fetch the details of the video
+    else
     If the url is of a playlist get all the videos from the playlist and fetch each video's detail
     */
     if (reqURL.indexOf('watch') === -1) {

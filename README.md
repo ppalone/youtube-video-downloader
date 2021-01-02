@@ -8,20 +8,17 @@ You need to have [nodejs](https://nodejs.org) installed on your machine.
 
 ## Quick start
 
-Clone the Repository
+```bash
+git clone https://github.com/ppalone/youtube-video-downloader.git
+cd youtube-video-downloader
 
-Install all dependencies
-```
+# Install dependencies
 npm install
-```
 
-Run the app
-```
+# Run
 npm run start
-```
 
-Start in development mode
-```
+# Start in development
 npm run dev
 ```
 
